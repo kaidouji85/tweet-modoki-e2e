@@ -19,5 +19,13 @@ const LOGIN_USER_PASSWORD = process.env.LOGIN_USER_PASSWORD;
   await page.click('input[value="ログイン"]');
 
   await page.screenshot({path: `03-user-home.png`});
+  await page.click('a[href="/tweets/create"]');
+
+  await page.screenshot({path: `04-tweet-create.png`});
+  await page.type('input[name="tweet"]', 'てすとついーと');
+  await page.click('input[value="ツイート"]');
+
+  await page.screenshot({path: '05-post-tweet.png'});
+
   await browser.close();
 })();
